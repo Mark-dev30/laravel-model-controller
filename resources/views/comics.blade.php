@@ -7,7 +7,7 @@
         <div class="content-cards">
             @foreach ($comics as $key => $comic)
                 <div class="card">
-                    <a href="{{ route('info-comic',['key' => $key])}}">
+                    <a href="{{ route('info-comic',['id' => $comic['id']])}}">
                         <div class="card-img">
                             <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}">
                         </div>

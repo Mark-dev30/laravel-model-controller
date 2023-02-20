@@ -1,8 +1,15 @@
 <?php
 
+use App\Http\Controllers\ComicController as ComicController;
+use App\Models\Comic;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+
+Route::get('/', [ComicController::class, 'index'])->name('comics');
+
+
+Route::get('/info-comic/{id}', [ComicController::class, 'show'])->name('info-comic');
+/* Route::get('/', function () {
     $menu = [
         'characters' => '/characters',
         'comics' => '/',
@@ -128,4 +135,4 @@ Route::get('/info-comic/{key}', function ($key) {
 
 
     return view('info_comic', compact('single', 'menu', 'menu_footer'));
-})->name('info-comic');
+})->name('info-comic'); */
