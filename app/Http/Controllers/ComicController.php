@@ -134,12 +134,9 @@ class ComicController extends Controller
 
         $comic = Comic::find($id);
 
-        $data = [
-            'single' => $comic,
-        ];
+        $single = $comic;
 
 
-
-        return view('info_comic', compact('data', 'menu', 'menu_footer'));
+        return view('info_comic', compact('single', 'menu', 'menu_footer'));
     }
 }

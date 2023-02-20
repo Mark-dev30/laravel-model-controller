@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-9">
                             <p>
-                                @foreach ($single['artists'] as $artist)
+                                @foreach (explode(',', $single['artists']) as $artist)
                                     <a href="#">{{$artist}},</a>
                                 @endforeach
                             </p>
@@ -62,7 +62,7 @@
                         </div>
                         <div class="col-9">
                             <p>
-                                @foreach ($single['writers'] as $writer)
+                                @foreach (explode(',', $single['writers']) as $writer)
                                     <a href="#">{{$writer}},</a>
                                 @endforeach
                             </p>
