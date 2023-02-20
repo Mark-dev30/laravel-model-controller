@@ -71,9 +71,15 @@ class ComicController extends Controller
 
         return view('comics', compact('menu', 'comics', 'menu_footer'));
     }
+    /*---------- BONUS 1 ----------*/
 
-    public function show($id)
+    /* public function show($id) */
+
+    /*---------- BONUS 2 ----------*/
+    public function show($slug)
     {
+
+
 
         $menu = [
             'characters' => '/characters',
@@ -132,10 +138,19 @@ class ComicController extends Controller
             ],
         ];
 
-        $comic = Comic::find($id);
+        /*---------- BONUS 1 ----------*/
+        /* $single = Comic::find($id);
 
-        $single = $comic;
+        dd($single);
 
+        return view('info_comic', compact('single', 'menu', 'menu_footer')); */
+
+
+        /*---------- BONUS 2 ----------*/
+
+        $comic = Comic::where('slug', $slug)->get();
+
+        $single = $comic[0];
 
         return view('info_comic', compact('single', 'menu', 'menu_footer'));
     }
